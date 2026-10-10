@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rafiqagency.com/sitemap.xml
