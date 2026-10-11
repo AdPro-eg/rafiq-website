@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تم الحجز | رفيق RAFIQ</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#13301a">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Readex+Pro:wght@400;500;600&display=swap">
+<script src="track.js" defer></script>
+<style>
+:root{--forest:#13301a;--forest-2:#1c4224;--leaf:#a0be7a;--paper:#f2f4ee;--ink:#15231a;--muted:#b9c6b0;
+  --f-display:"El Messiri",system-ui,sans-serif;--f-body:"Readex Pro",system-ui,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(120% 80% at 80% 0%,#21502b 0%,var(--forest) 55%,#0b1f10 100%) fixed;color:#eef3e8;font:400 1rem/1.8 var(--f-body);
+  display:grid;place-items:center;min-height:100vh;min-height:100dvh;padding:28px 16px}
+main{width:100%;max-width:560px;text-align:center}
+.logo{height:40px;margin-bottom:34px}
+.tick{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;background:var(--leaf);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(160,190,122,.14),0 0 0 22px rgba(160,190,122,.06)}
+.tick svg{width:40px;height:40px;stroke:var(--forest);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:draw .6s .25s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+h1{font:700 clamp(2rem,6vw,2.6rem)/1.3 var(--f-display);margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 26px}
+.card{background:rgba(255,255,255,.06);border:1px solid rgba(160,190,122,.28);border-radius:22px;padding:20px 22px;margin-bottom:22px;text-align:start;display:grid;gap:10px}
+.row{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.row span{color:var(--muted);font-size:.9rem}
+.row b{font-weight:600}
+.step{background:rgba(160,190,122,.12);border-radius:16px;padding:14px 16px;margin-bottom:18px;font-size:.95rem;text-align:start}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;border-radius:999px;font:600 1rem var(--f-body);text-decoration:none;border:0;cursor:pointer;margin-bottom:12px;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:22px;height:22px;flex:none}
+.wa{background:#25d366;color:#08240f}
+.ghost{background:transparent;color:#eef3e8;border:1px solid rgba(160,190,122,.45)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair .btn{margin:0;font-size:.92rem}
+.links{margin-top:26px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font-size:.92rem}
+.links a{color:var(--leaf);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+[hidden]{display:none!important}
+@media (max-width:420px){.pair{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.tick svg{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="logo-mark.png" alt="رفيق RAFIQ">
+  <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <h1 id="h">تم الحجز! 🎉</h1>
+  <p class="lead" id="lead">مستنيينك في المكالمة التعريفية. هنفهم براندك ونقولك نبدأ منين.</p>
+
+  <div class="card" id="card" hidden>
+    <div class="row"><span id="lWhen">الميعاد</span><b id="when"></b></div>
+    <div class="row"><span id="lType">نوع المكالمة</span><b id="type">أونلاين · 30 دقيقة · ببلاش</b></div>
+    <div class="row"><span id="lRef">رقم الحجز</span><b id="ref" dir="ltr"></b></div>
+  </div>
+
+  <p class="step" id="step">فاضل خطوة صغيرة: ابعتلنا الرسالة على واتساب عشان نأكدلك الميعاد ونبعتلك لينك المكالمة 💚</p>
+
+  <a class="btn wa" id="wa" href="https://wa.me/201012661340" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.3 19.4L3 29l6.8-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.5z"/></svg>
+    <span id="waT">ابعت التأكيد على واتساب</span>
+  </a>
+
+  <div class="pair" id="cal" hidden>
+    <a class="btn ghost" id="gcal" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <span id="gcalT">ضيفه لتقويم جوجل</span></a>
+    <button class="btn ghost" id="ics" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+      <span id="icsT">تقويم الموبايل (iPhone / Outlook)</span></button>
+  </div>
+
+  <nav class="links">
+    <a href="https://www.instagram.com/rafiq__team/" target="_blank" rel="noopener" id="ig">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      <span id="igT">تابعنا على انستجرام</span></a>
+    <a href="./" id="home"><span id="homeT">ارجع للموقع</span></a>
+  </nav>
+</main>
+<script>
+(function(){
+  var d=null; try{d=JSON.parse(sessionStorage.getItem("rafiq_booking")||"null")}catch(e){}
+  var lang=(d&&d.lang)||(function(){try{return localStorage.getItem("rafiq_lang")}catch(e){return null}})()||"ar";
+  var T={ar:{h:"تم الحجز! 🎉",lead:"مستنيينك في المكالمة التعريفية. هنفهم براندك ونقولك نبدأ منين.",lWhen:"الميعاد",lType:"نوع المكالمة",type:"أونلاين · 30 دقيقة · ببلاش",lRef:"رقم الحجز",
+      step:"فاضل خطوة صغيرة: ابعتلنا الرسالة على واتساب عشان نأكدلك الميعاد ونبعتلك لينك المكالمة 💚",waT:"ابعت التأكيد على واتساب",gcalT:"ضيفه لتقويم جوجل",icsT:"تقويم الموبايل (iPhone / Outlook)",igT:"تابعنا على انستجرام",homeT:"ارجع للموقع",
+      title:"تم الحجز | رفيق RAFIQ",ev:"مكالمة تعريفية مع رفيق RAFIQ",evd:"مكالمة تعريفية أونلاين (30 دقيقة). هنبعتلك لينك المكالمة على واتساب.",
+      gh:"أهلًا بيك 👋",glead:"مفيش حجز جديد هنا. لو عايز تحجز مكالمة تعريفية ارجع للموقع، أو كلمنا على واتساب على طول.",gstep:"",gwa:"كلمنا على واتساب"},
+    en:{h:"You're booked! 🎉",lead:"We're looking forward to your intro call. We'll get to know your brand and show you where to start.",lWhen:"When",lType:"Call type",type:"Online · 30 minutes · free",lRef:"Booking ref",
+      step:"One small step left: send us the message on WhatsApp so we can confirm and share the call link 💚",waT:"Confirm on WhatsApp",gcalT:"Add to Google Calendar",icsT:"Phone calendar (iPhone / Outlook)",igT:"Follow us on Instagram",homeT:"Back to the site",
+      title:"Booked | RAFIQ",ev:"Intro call with RAFIQ",evd:"Online intro call (30 minutes). We'll send the call link on WhatsApp.",
+      gh:"Hi there 👋",glead:"There's no new booking here. Head back to the site to book an intro call, or message us on WhatsApp.",gstep:"",gwa:"Message us on WhatsApp"}};
+  var L=T[lang]||T.ar, $=function(i){return document.getElementById(i)};
+  document.documentElement.lang=lang; document.documentElement.dir=lang==="ar"?"rtl":"ltr"; document.title=L.title;
+  ["h","lead","lWhen","lType","type","lRef","step","waT","gcalT","icsT","igT","homeT"].forEach(function(k){$(k).textContent=L[k]});
+
+  var fresh=d&&d.ts&&(Date.now()-d.ts<6*3600e3);
+  if(!fresh){$("h").textContent=L.gh;$("lead").textContent=L.glead;$("step").hidden=true;$("waT").textContent=L.gwa;return}
+
+  $("card").hidden=false; $("when").textContent=d.when||""; $("ref").textContent=d.ref||"—";
+  if(d.wa&&/^https:\/\/wa\.me\//.test(d.wa)) $("wa").href=d.wa;
+
+  // conversion: once per booking
+  try{ if(!sessionStorage.getItem("rafiq_lead_"+d.ref)){ sessionStorage.setItem("rafiq_lead_"+d.ref,"1");
+      var fire=function(){ if(window.track) track("lead",{value:1,currency:"EGP",ref:d.ref}); };
+      if(window.track) fire(); else window.addEventListener("load",fire); } }catch(e){}
+
+  // Cairo local time -> UTC (handles daylight saving)
+  function cairoUTC(date,time){
+    var p=date.split("-").map(Number), q=time.split(":").map(Number), want=Date.UTC(p[0],p[1]-1,p[2],q[0],q[1]), g=want;
+    var f=new Intl.DateTimeFormat("en-GB",{timeZone:"Africa/Cairo",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+    for(var i=0;i<3;i++){var o={};f.formatToParts(new Date(g)).forEach(function(x){o[x.type]=x.value});
+      g+=want-Date.UTC(+o.year,+o.month-1,+o.day,+o.hour,+o.minute)}
+    return new Date(g)}
+  if(d.date&&d.time&&/^\d{4}-\d{2}-\d{2}$/.test(d.date)&&/^\d{1,2}:\d{2}$/.test(d.time)){
+    var s=cairoUTC(d.date,d.time), e=new Date(s.getTime()+30*60e3);
+    var z=function(x){return x.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"")};
+    $("cal").hidden=false;
+    $("gcal").href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(L.ev)+"&dates="+z(s)+"/"+z(e)+"&details="+encodeURIComponent(L.evd+(d.ref?" ("+d.ref+")":""))+"&ctz=Africa/Cairo";
+    $("ics").onclick=function(){
+      var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//RAFIQ//Booking//AR","CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VEVENT",
+        "UID:"+(d.ref||Date.now())+"@rafiqagency.com","DTSTAMP:"+z(new Date()),"DTSTART:"+z(s),"DTEND:"+z(e),
+        "SUMMARY:"+L.ev,"DESCRIPTION:"+L.evd+(d.ref?" ("+d.ref+")":""),
+        "BEGIN:VALARM","TRIGGER:-PT30M","ACTION:DISPLAY","DESCRIPTION:"+L.ev,"END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar;charset=utf-8"}));
+      a.download="rafiq-intro-call.ics"; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)};
+  }
+})();
+</script>
+</body>
+</html>
