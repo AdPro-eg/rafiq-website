@@ -1483,6 +1483,21 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
 @media (prefers-reduced-motion:reduce){.fx *{animation:none!important}}
 
 
+
+/* creators community band */
+.crew{background:radial-gradient(110% 120% at 0% 0%,#21502b 0%,var(--forest) 60%);color:#fff;padding-block:clamp(56px,8vw,96px)}
+.crew-in{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+.crew .eyebrow{color:var(--leaf)}
+.crew h2{font-size:clamp(1.9rem,4.2vw,2.8rem);margin:12px 0 14px;color:#fff}
+.crew h2 em{font-style:normal;color:var(--leaf)}
+.crew-copy p{color:#cfdcc6;max-width:52ch;margin:0 0 18px}
+.crew-roles{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 26px}
+.crew-roles li{border:1px solid rgba(160,190,122,.45);border-radius:999px;padding:6px 14px;font-size:.92rem;color:#e6efdc}
+.crew-perks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.crew-perks li{background:rgba(255,255,255,.06);border:1px solid rgba(160,190,122,.25);border-radius:18px;padding:18px 20px;display:grid;gap:4px}
+.crew-perks b{color:var(--leaf);font-size:1.05rem}
+.crew-perks span{color:#cfdcc6;font-size:.93rem}
+@media (max-width:860px){.crew-in{grid-template-columns:1fr}}
 /* pass 2 */
 .reels-ctl{gap:10px;flex-wrap:wrap}
 .rl:focus-visible{outline:3px solid var(--leaf);outline-offset:4px}
@@ -1724,6 +1739,23 @@ input[aria-invalid="true"]{border-color:#c0392b!important;box-shadow:0 0 0 3px r
   </div>
 </section>
 
+<section class="crew" id="creators" aria-labelledby="crewH">
+  <div class="wrap crew-in">
+    <div class="crew-copy">
+      <span class="eyebrow" data-c="eye">مجتمع رفيق للمبدعين</span>
+      <h2 id="crewH" data-c="h">صانع محتوى أو فوتوجرافر؟ <em>خلّينا نكبر سوا.</em></h2>
+      <p data-c="p">انضم لمجتمع رفيق، واشتغل مع براندات حقيقية. إحنا مش بس هنشغّلك، إحنا شركاءك في نجاحك، وهتبقى من أبطال رفيق.</p>
+      <ul class="crew-roles"><li data-c="r1">🎬 صانع محتوى / UGC</li><li data-c="r2">📸 فوتوجرافر</li><li data-c="r3">🎥 فيديوجرافر</li><li data-c="r4">✂️ مونتير</li></ul>
+      <a class="btn btn-leaf" href="creators.html"><span data-c="cta">انضم لمجتمع المبدعين</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <ul class="crew-perks">
+      <li><b data-c="k1">براندات حقيقية</b><span data-c="k1s">شغل مدفوع مع عملاء رفيق.</span></li>
+      <li><b data-c="k2">نكبر سوا</b><span data-c="k2s">تطوير لمحتواك وحساباتك.</span></li>
+      <li><b data-c="k3">شراكة مستمرة</b><span data-c="k3s">مش مشروع مرة وخلاص.</span></li>
+    </ul>
+  </div>
+</section>
+
 <section class="testi" id="testimonials" hidden>
   <div class="wrap">
     <div class="sec-head">
@@ -1807,7 +1839,7 @@ input[aria-invalid="true"]{border-color:#c0392b!important;box-shadow:0 0 0 3px r
     <div class="ft">
       <div><img src="logo-mark.png" alt="رفيق RAFIQ"><p data-i="ft_p">وكالة تسويق ودعاية وإعلان. From Brand Identity to Customer Connection.</p></div>
       <ul><li><a href="#services" data-i="nav_services">الخدمات</a></li><li><a href="#work" data-i="nav_work">أعمالنا</a></li><li><a href="#contact" data-i="nav_contact">تواصل معنا</a></li></ul>
-      <ul><li><a href="https://www.instagram.com/rafiq__team/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595413432554" target="_blank" rel="noopener">Facebook</a></li><li><a href="mailto:Info@rafiqagency.com" dir="ltr">Info@rafiqagency.com</a></li><li><a href="tel:+201012661340" dir="ltr">+20 101 266 1340</a></li></ul>
+      <ul><li><a href="creators.html" data-c="ft">مجتمع رفيق للمبدعين</a></li><li><a href="https://www.instagram.com/rafiq__team/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595413432554" target="_blank" rel="noopener">Facebook</a></li><li><a href="mailto:Info@rafiqagency.com" dir="ltr">Info@rafiqagency.com</a></li><li><a href="tel:+201012661340" dir="ltr">+20 101 266 1340</a></li></ul>
     </div>
     <div class="copyr"><span>© 2026 RAFIQ — رفيق</span><span data-i="ft_made">مدينة نصر، القاهرة</span></div>
   </div>
@@ -2641,6 +2673,20 @@ const TESTI=[];
    return `<figure class="tq-card">${x.stat?`<div class="tq-stat" dir="ltr">${esc(x.stat)}<small>${esc(st)}</small></div>`:`<div class="tq-stars" aria-label="5/5">★★★★★</div>`}<blockquote>${esc(q)}</blockquote><figcaption class="tq-who"><span class="tq-av">${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:esc((x.name||"?").trim()[0])}</span><span><b>${esc(x.name)}</b><span>${esc(r)}</span></span></figcaption></figure>`}).join("")}
  const lb=document.getElementById("langBtn");if(lb)lb.addEventListener("click",()=>setTimeout(draw,80));
  draw();
+})();
+</script>
+
+<script>
+// ===== مجتمع رفيق للمبدعين (ترجمة السكشن) =====
+(function(){
+  const EN={eye:"RAFIQ Creators Community",h:"Content creator or photographer? <em>Let's grow together.</em>",p:"Join the RAFIQ community and work with real brands. We won't just hire you — we'll be partners in your success, and you'll become one of RAFIQ's heroes.",
+    r1:"🎬 Content creator / UGC",r2:"📸 Photographer",r3:"🎥 Videographer",r4:"✂️ Editor",cta:"Join the creators community",
+    k1:"Real brands",k1s:"Paid work with RAFIQ clients.",k2:"Grow together",k2s:"We help level up your content and accounts.",k3:"Long-term partnership",k3s:"Not a one-off project.",ft:"RAFIQ Creators Community"};
+  const els=[...document.querySelectorAll("[data-c]")], AR={};
+  els.forEach(e=>{AR[e.dataset.c]=e.innerHTML});
+  function draw(){const en=document.documentElement.lang==="en";els.forEach(e=>{const k=e.dataset.c;e.innerHTML=en&&EN[k]?EN[k]:AR[k]})}
+  const lb=document.getElementById("langBtn");if(lb)lb.addEventListener("click",()=>setTimeout(draw,80));
+  draw();
 })();
 </script>
 </body>

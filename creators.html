@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مجتمع رفيق للمبدعين | انضم لصناع المحتوى والفوتوجرافرز — RAFIQ</title>
+<meta name="description" content="صانع محتوى، فوتوجرافر أو فيديوجرافر؟ انضم لمجتمع رفيق للمبدعين في القاهرة، واشتغل مع براندات حقيقية. إحنا شركاءك في نجاحك.">
+<meta name="theme-color" content="#13301a">
+<link rel="canonical" href="https://rafiqagency.com/creators.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RAFIQ رفيق">
+<meta property="og:locale" content="ar_EG">
+<meta property="og:title" content="مجتمع رفيق للمبدعين — خلّينا نكبر سوا">
+<meta property="og:description" content="صناع محتوى، فوتوجرافرز وفيديوجرافرز: ابعت بياناتك وانضم لمجتمع رفيق، واشتغل مع براندات حقيقية.">
+<meta property="og:image" content="https://rafiqagency.com/og-image.jpg">
+<meta property="og:url" content="https://rafiqagency.com/creators.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="sub.css?v=1">
+<script src="track.js?v=3" defer></script>
+<style>
+/* layout: forest hero with a photo collage → perks → 3 steps → the form card → footer */
+.hero{background:radial-gradient(120% 90% at 85% 0%,#21502b 0%,var(--forest) 55%,#0b1f10 100%);color:#fff;padding-block:clamp(48px,8vw,96px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);margin:14px 0 16px}
+.hero h1 em{font-style:normal;color:var(--leaf)}
+.hero p{color:#cfdcc6;font-size:1.08rem;max-width:52ch;margin:0 0 22px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.roles li{border:1px solid rgba(160,190,122,.45);color:#e6efdc;border-radius:999px;padding:6px 14px;font-size:.92rem;display:inline-flex;gap:6px;align-items:center}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.collage{position:relative;height:420px}
+.collage figure{position:absolute;margin:0;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.4);border:4px solid rgba(255,255,255,.08)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .c1{width:52%;height:78%;inset-inline-end:0;top:0;transform:rotate(3deg)}
+.collage .c2{width:46%;height:58%;inset-inline-start:2%;top:18%;transform:rotate(-5deg)}
+.collage .c3{width:40%;height:42%;inset-inline-end:28%;bottom:0;transform:rotate(-1deg)}
+.collage .tag{position:absolute;z-index:2;background:#fff;color:var(--forest);border-radius:14px;padding:8px 14px;font-weight:700;font-size:.9rem;box-shadow:0 10px 24px rgba(0,0,0,.25);display:flex;gap:8px;align-items:center}
+.collage .t1{top:6%;inset-inline-start:0}
+.collage .t2{bottom:8%;inset-inline-end:0;background:var(--leaf)}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;display:grid;gap:10px;align-content:start}
+.perk .ic{width:46px;height:46px;border-radius:14px;background:var(--forest);color:var(--leaf);display:grid;place-items:center}
+.perk .ic svg{width:22px;height:22px}
+.perk h3{font-size:1.15rem}
+.perk p{margin:0;color:var(--muted);font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{background:var(--forest);color:#e6efdc;border-radius:20px;padding:24px;counter-increment:s;display:grid;gap:8px}
+.steps li::before{content:counter(s,decimal-leading-zero);font:700 2.2rem/1 var(--f-display);color:var(--leaf)}
+.steps b{color:#fff;font-size:1.1rem}
+.join{background:#e9efe1}
+.join .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
+.side{position:sticky;top:96px;display:grid;gap:14px}
+.side h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+.side p{margin:0;color:var(--muted)}
+.side .note{background:#fff;border-radius:16px;padding:14px 16px;font-size:.92rem;border:1px solid var(--line)}
+form.card{background:var(--card);border-radius:24px;padding:clamp(20px,4vw,34px);display:grid;gap:18px;box-shadow:0 20px 50px rgba(19,48,26,.08);min-width:0}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{display:grid;gap:6px;font-size:.92rem;font-weight:600;min-width:0}
+.fld small{font-weight:400;color:var(--muted)}
+input[type=text],input[type=tel],input[type=email],input[type=url],select,textarea{font:inherit;font-size:.98rem;font-weight:400;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);width:100%;min-height:48px}
+textarea{min-height:100px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--leaf-ink);outline:none;box-shadow:0 0 0 3px rgba(160,190,122,.35)}
+input[aria-invalid="true"]{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,.15)}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:8px;min-width:0}
+legend{font-size:.92rem;font-weight:600;padding:0;margin-bottom:8px}
+legend small{font-weight:400;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;display:block}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:42px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);font-size:.93rem;cursor:pointer;transition:.15s}
+.chips input:checked+span{background:var(--forest);border-color:var(--forest);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--leaf);outline-offset:2px}
+.with-none{display:grid;gap:8px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;font-weight:400;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:4px;accent-color:var(--forest);flex:none}
+.check a{color:var(--leaf-ink);font-weight:600}
+.yn{display:flex;gap:8px}
+.err{color:#a3312a;font-size:.92rem;min-height:1.2em;margin:0}
+input.hp{position:absolute;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;border:0!important;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+.done{background:var(--forest);color:#fff;border-radius:24px;padding:clamp(26px,5vw,44px);text-align:center;display:grid;gap:12px;justify-items:center}
+.done .tick{width:72px;height:72px;border-radius:50%;background:var(--leaf);display:grid;place-items:center}
+.done .tick svg{width:34px;height:34px;stroke:var(--forest);stroke-width:3;fill:none}
+.done p{color:#cfdcc6;margin:0;max-width:44ch}
+@media (max-width:900px){
+  .hero .wrap,.join .wrap{grid-template-columns:1fr}
+  .collage{height:300px;order:-1}
+  .perks{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .side{position:static}
+}
+@media (max-width:560px){
+  .perks,.f2{grid-template-columns:1fr}
+  .top nav .hide-s{display:none}
+  .collage{height:250px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#join">تخطّي للفورم</a>
+<header class="top">
+  <div class="wrap">
+    <a href="./" aria-label="رفيق RAFIQ — الصفحة الرئيسية"><img src="logo-mark.png" alt="رفيق RAFIQ"></a>
+    <nav aria-label="روابط">
+      <a class="hide-s" href="./">الرئيسية</a>
+      <a class="hide-s" href="creators-terms.html">شروط الانضمام</a>
+      <a class="cta" href="#join">قدّم دلوقتي</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero dark">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">مجتمع رفيق للمبدعين</span>
+      <h1>عندك موهبة؟ <em>خلّينا نكبر سوا.</em></h1>
+      <p>سواء بتصنع محتوى، أو بتصوّر فوتوغرافي أو فيديو… انضم لمجتمع رفيق، واشتغل مع براندات حقيقية. إحنا مش بس هنشغّلك، إحنا شركاءك في نجاحك، وهتبقى من أبطال رفيق.</p>
+      <ul class="roles" aria-label="مين يقدر ينضم">
+        <li>🎬 صانع محتوى / UGC</li><li>📸 فوتوجرافر</li><li>🎥 فيديوجرافر</li><li>✂️ مونتير</li><li>🎙️ تعليق صوتي</li>
+      </ul>
+      <div class="acts">
+        <a class="btn btn-leaf" href="#join">انضم لمجتمع رفيق <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#how">إزاي بيشتغل؟</a>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <figure class="c1"><img src="reel-grill.jpg" alt=""></figure>
+      <figure class="c2"><img src="reel-appetite.jpg" alt=""></figure>
+      <figure class="c3"><img src="reel-morning.jpg" alt=""></figure>
+      <span class="tag t1">📸 من أبطال رفيق</span>
+      <span class="tag t2">🤝 شريكك في النجاح</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">ليه تنضم؟</span><h2>مجتمع بيكبّرك… مش بس شغلانة</h2></div>
+    <div class="perks">
+      <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><h3>براندات حقيقية</h3><p>فرص شغل مدفوعة مع عملاء رفيق: مطاعم، كافيهات، متاجر وبراندات بتكبر.</p></div>
+      <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><h3>نكبر سوا</h3><p>نصايح وتطوير لمحتواك وحساباتك من فريق شغّال في السوق كل يوم.</p></div>
+      <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><h3>شراكة مستمرة</h3><p>مش مشروع مرة وخلاص. لما ننجح سوا، بنفضل نرشّحك للشغل اللي جاي.</p></div>
+      <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8 5.8 21.2l1.3-7L2 9.4l7-.9z"/></svg></span><h3>من أبطال رفيق</h3><p>شغلك الحلو بيتعرض على صفحاتنا، وبنحطك في الواجهة قدّام البراندات.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">إزاي بيشتغل؟</span><h2>3 خطوات وتبقى معانا</h2></div>
+    <ol class="steps">
+      <li><b>ابعت بياناتك</b><span>املا الفورم في دقيقتين، وحط لينكات شغلك.</span></li>
+      <li><b>نراجع ونتواصل</b><span>فريقنا بيشوف شغلك، ولما تيجي فرصة مناسبة بنكلمك على واتساب.</span></li>
+      <li><b>نتفق ونبدأ</b><span>كل مشروع ليه اتفاق واضح: المطلوب والمواعيد والمقابل، قبل أي تصوير.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="side">
+      <span class="eyebrow">قدّم دلوقتي</span>
+      <h2>انضم لمجتمع رفيق للمبدعين</h2>
+      <p>كل ما تحط تفاصيل ولينكات أكتر عن شغلك، كل ما نقدر نرشّحك لفرص أنسب ليك.</p>
+      <div class="note">🔒 بياناتك بنستخدمها بس عشان نتواصل معاك بخصوص فرص الشغل، ومش بنديها لحد. <a href="creators-terms.html">اقرا شروط الانضمام</a></div>
+    </div>
+
+    <div>
+    <form class="card" id="cForm" novalidate>
+      <div class="f2">
+        <label class="fld" for="cName">الاسم<input type="text" id="cName" name="name" autocomplete="name" required aria-describedby="cErr"></label>
+        <label class="fld" for="cPhone">رقم الموبايل / واتساب<input type="tel" id="cPhone" name="phone" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="01xxxxxxxxx" required aria-describedby="cErr"></label>
+      </div>
+      <div class="f2">
+        <label class="fld" for="cEmail">الإيميل <small>(اختياري)</small><input type="email" id="cEmail" name="email" autocomplete="email" dir="ltr" placeholder="name@email.com"></label>
+        <label class="fld" for="cCity">المدينة<input type="text" id="cCity" name="city" autocomplete="address-level2" placeholder="مثلًا: مدينة نصر، القاهرة" required aria-describedby="cErr"></label>
+      </div>
+
+      <fieldset>
+        <legend>بتشتغل كـ إيه؟ <small>(اختار كل اللي ينطبق عليك)</small></legend>
+        <div class="chips" id="cRoles">
+          <label><input type="checkbox" name="roles" value="صانع محتوى / UGC"><span>صانع محتوى / UGC</span></label>
+          <label><input type="checkbox" name="roles" value="فوتوجرافر"><span>فوتوجرافر</span></label>
+          <label><input type="checkbox" name="roles" value="فيديوجرافر"><span>فيديوجرافر</span></label>
+          <label><input type="checkbox" name="roles" value="مونتير"><span>مونتير</span></label>
+          <label><input type="checkbox" name="roles" value="تعليق صوتي"><span>تعليق صوتي</span></label>
+          <label><input type="checkbox" name="roles" value="وجه إعلاني / موديل"><span>وجه إعلاني / موديل</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>مجالات المحتوى اللي بتحبها <small>(اختياري)</small></legend>
+        <div class="chips">
+          <label><input type="checkbox" name="niches" value="أكل ومطاعم"><span>أكل ومطاعم</span></label>
+          <label><input type="checkbox" name="niches" value="كافيهات ومشروبات"><span>كافيهات ومشروبات</span></label>
+          <label><input type="checkbox" name="niches" value="موضة"><span>موضة</span></label>
+          <label><input type="checkbox" name="niches" value="تجميل وعناية"><span>تجميل وعناية</span></label>
+          <label><input type="checkbox" name="niches" value="لايف ستايل"><span>لايف ستايل</span></label>
+          <label><input type="checkbox" name="niches" value="منتجات وريفيوهات"><span>منتجات وريفيوهات</span></label>
+          <label><input type="checkbox" name="niches" value="تكنولوجيا"><span>تكنولوجيا</span></label>
+          <label><input type="checkbox" name="niches" value="عقارات وأماكن"><span>عقارات وأماكن</span></label>
+        </div>
+      </fieldset>
+
+      <div class="f2">
+        <div class="with-none">
+          <label class="fld" for="cIg">لينك انستجرام<input type="url" id="cIg" name="instagram" dir="ltr" placeholder="https://instagram.com/…"></label>
+          <label class="check"><input type="checkbox" id="cIgNo"> معنديش انستجرام</label>
+        </div>
+        <div class="with-none">
+          <label class="fld" for="cTt">لينك تيك توك<input type="url" id="cTt" name="tiktok" dir="ltr" placeholder="https://tiktok.com/@…"></label>
+          <label class="check"><input type="checkbox" id="cTtNo"> معنديش تيك توك</label>
+        </div>
+      </div>
+
+      <label class="fld" for="cPf">لينك البورتفوليو أو نماذج من شغلك <small>(Behance، Drive، موقع… مهم للفوتوجرافرز والفيديوجرافرز)</small><input type="url" id="cPf" name="portfolio" dir="ltr" placeholder="https://…"></label>
+
+      <div class="f2">
+        <fieldset>
+          <legend>اشتغلت مع براندات قبل كده؟</legend>
+          <div class="chips yn"><label><input type="radio" name="brands" value="أيوه"><span>أيوه</span></label><label><input type="radio" name="brands" value="لأ" checked><span>لأ، لسه</span></label></div>
+        </fieldset>
+        <fieldset>
+          <legend>متاح للتصوير في أماكن أو إيفنتات؟</legend>
+          <div class="chips yn"><label><input type="radio" name="onsite" value="أيوه" checked><span>أيوه</span></label><label><input type="radio" name="onsite" value="لأ"><span>لأ</span></label></div>
+        </fieldset>
+      </div>
+
+      <label class="fld" for="cGear">المعدات اللي معاك <small>(اختياري — كاميرا، موبايل، إضاءة، مايك…)</small><input type="text" id="cGear" name="gear" placeholder="مثلًا: Sony A7III + 2 لايت + مايك لاسلكي"></label>
+      <label class="fld" for="cSpot">لينك صور أو فيديو لمكان التصوير بتاعك <small>(اختياري)</small><input type="url" id="cSpot" name="spot" dir="ltr" placeholder="https://drive.google.com/…"></label>
+      <label class="fld" for="cAbout">عرّفنا بنفسك في سطرين <small>(اختياري)</small><textarea id="cAbout" name="about" placeholder="مثلًا: بعمل ريلز أكل وريفيوهات مطاعم من سنتين، وعندي 12K متابع."></textarea></label>
+
+      <input type="text" name="website" id="cWeb" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div style="display:grid;gap:10px">
+        <label class="check"><input type="checkbox" id="cAdult" required> عندي 18 سنة أو أكتر</label>
+        <label class="check"><input type="checkbox" id="cTerms" required> قريت ووافقت على <a href="creators-terms.html" target="_blank" rel="noopener">شروط الانضمام لمجتمع رفيق</a></label>
+      </div>
+
+      <p class="err" id="cErr" role="alert"></p>
+      <div><button class="btn btn-forest" type="submit" id="cBtn"><span>ابعت طلب الانضمام</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </form>
+
+    <div class="done" id="cDone" hidden tabindex="-1">
+      <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h2>استلمنا بياناتك 💚</h2>
+      <p id="cDoneP">أهلًا بيك في مجتمع رفيق للمبدعين! فريقنا هيراجع شغلك، ولما تيجي فرصة مناسبة هنكلمك على واتساب.</p>
+      <a class="btn btn-leaf" id="cWa" href="https://wa.me/201012661340" target="_blank" rel="noopener" hidden>ابعت بياناتك على واتساب</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/rafiq__team/" target="_blank" rel="noopener">تابعنا على انستجرام</a>
+    </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 RAFIQ — رفيق · مدينة نصر، القاهرة</span>
+    <nav aria-label="روابط الفوتر"><a href="./">الرئيسية</a><a href="creators-terms.html">شروط الانضمام</a><a href="https://www.instagram.com/rafiq__team/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/201012661340" target="_blank" rel="noopener">واتساب</a></nav>
+  </div>
+</footer>
+
+<script>
+// لينك الـ Web App بتاع "مجتمع رفيق للمبدعين" (Apps Script). لو فاضي، الطلب بيتبعت على واتساب.
+const CREATORS_API = "";
+const WA = "201012661340";
+(function(){
+  const f = document.getElementById("cForm"), err = document.getElementById("cErr"), $ = id => document.getElementById(id);
+  const pair = (box, inp) => box.addEventListener("change", () => { inp.disabled = box.checked; if (box.checked) { inp.value = ""; inp.removeAttribute("aria-invalid"); } });
+  pair($("cIgNo"), $("cIg")); pair($("cTtNo"), $("cTt"));
+  const vals = n => [...f.querySelectorAll('input[name="' + n + '"]:checked')].map(i => i.value);
+  const url = v => !v || /^https?:\/\/\S+\.\S+/i.test(v.trim());
+  function fail(msg, el){ err.textContent = msg; if (el){ el.setAttribute("aria-invalid","true"); el.focus(); } }
+  f.addEventListener("input", e => { if (e.target.getAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid"); });
+  f.addEventListener("submit", async e => {
+    e.preventDefault(); err.textContent = "";
+    const d = {
+      name: $("cName").value.trim(), phone: $("cPhone").value.trim(), email: $("cEmail").value.trim(), city: $("cCity").value.trim(),
+      roles: vals("roles").join("، "), niches: vals("niches").join("، "),
+      instagram: $("cIgNo").checked ? "معندوش" : $("cIg").value.trim(), tiktok: $("cTtNo").checked ? "معندوش" : $("cTt").value.trim(),
+      portfolio: $("cPf").value.trim(), brands: (vals("brands")[0] || ""), onsite: (vals("onsite")[0] || ""),
+      gear: $("cGear").value.trim(), spot: $("cSpot").value.trim(), about: $("cAbout").value.trim(),
+      adult: $("cAdult").checked, terms: $("cTerms").checked, website: $("cWeb").value
+    };
+    if (!d.name) return fail("اكتب اسمك عشان نعرف نناديك 😊", $("cName"));
+    if (d.phone.replace(/\D/g, "").length < 10) return fail("رقم الموبايل شكله ناقص. اكتبه كامل عشان نقدر نكلمك.", $("cPhone"));
+    if (d.email && !/^\S+@\S+\.\S+$/.test(d.email)) return fail("الإيميل شكله مش مظبوط. صلّحه أو سيبه فاضي.", $("cEmail"));
+    if (!d.city) return fail("اكتب مدينتك عشان نعرف نرشّحك لشغل قريب منك.", $("cCity"));
+    if (!d.roles) { err.textContent = "اختار بتشتغل كـ إيه (حاجة واحدة على الأقل)."; f.querySelector('input[name="roles"]').focus(); return; }
+    for (const [k, id] of [["instagram","cIg"],["tiktok","cTt"],["portfolio","cPf"],["spot","cSpot"]]) {
+      if (d[k] !== "معندوش" && !url(d[k])) return fail("اللينك ده شكله مش كامل. لازم يبدأ بـ https://", $(id));
+    }
+    if (!d.instagram && !d.tiktok && !d.portfolio) return fail("حط لينك واحد على الأقل لشغلك: انستجرام أو تيك توك أو بورتفوليو.", $("cIg"));
+    if (!d.adult) { err.textContent = "الانضمام لمجتمع رفيق متاح لـ 18 سنة فأكتر."; $("cAdult").focus(); return; }
+    if (!d.terms) { err.textContent = "لازم توافق على شروط الانضمام الأول."; $("cTerms").focus(); return; }
+
+    const btn = $("cBtn"), lbl = btn.querySelector("span"); btn.setAttribute("aria-busy", "true"); lbl.textContent = "بنبعت…";
+    let ok = false;
+    if (CREATORS_API) {
+      try {
+        const r = await fetch(CREATORS_API, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(d) });
+        const j = await r.json(); ok = !!j.ok;
+      } catch (x) {}
+    }
+    btn.removeAttribute("aria-busy"); lbl.textContent = "ابعت طلب الانضمام";
+    const lines = ["أهلًا رفيق 👋 عايز أنضم لمجتمع رفيق للمبدعين", "الاسم: " + d.name, "الموبايل: " + d.phone, "المدينة: " + d.city, "بشتغل كـ: " + d.roles];
+    if (d.instagram) lines.push("انستجرام: " + d.instagram); if (d.tiktok) lines.push("تيك توك: " + d.tiktok); if (d.portfolio) lines.push("بورتفوليو: " + d.portfolio);
+    const wa = $("cWa"); wa.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
+    wa.hidden = ok;
+    $("cDoneP").textContent = ok
+      ? "أهلًا بيك في مجتمع رفيق للمبدعين! فريقنا هيراجع شغلك، ولما تيجي فرصة مناسبة هنكلمك على واتساب."
+      : "فاضل خطوة صغيرة: دوس الزرار تحت وابعتلنا بياناتك على واتساب، والرسالة جاهزة ومكتوبة.";
+    f.hidden = true; const dn = $("cDone"); dn.hidden = false; dn.focus(); dn.scrollIntoView({ block: "center", behavior: "smooth" });
+    try { if (window.track) track("creator_apply", { roles: d.roles }); } catch (x) {}
+  });
+})();
+</script>
+</body>
+</html>
