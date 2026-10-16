@@ -3,7 +3,7 @@
    ga4:   كود Google Analytics، شكله  G-XXXXXXXXXX
    pixel: رقم Meta Pixel، أرقام بس زي 123456789012345
    طول ما الاتنين فاضيين: مفيش أي تتبّع ومفيش شريط كوكيز.            */
-window.RAFIQ_TRACK = { ga4: "", pixel: "" };
+window.RAFIQ_TRACK = { ga4: "G-0LJCR7NRFJ", pixel: "" };
 
 (function () {
   var C = window.RAFIQ_TRACK, KEY = "rafiq_consent", loaded = false, queue = [];
