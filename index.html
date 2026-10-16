@@ -1482,6 +1482,12 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
 @keyframes wv{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion:reduce){.fx *{animation:none!important}}
 
+
+/* pass 2 */
+.reels-ctl{gap:10px;flex-wrap:wrap}
+.rl:focus-visible{outline:3px solid var(--leaf);outline-offset:4px}
+input[aria-invalid="true"]{border-color:#c0392b!important;box-shadow:0 0 0 3px rgba(192,57,43,.15)}
+@media (max-width:760px){.totop{display:none!important}}
 /* pro pass: a11y + new components */
 :root{--leaf-ink:#456b26}
 .seo-note{color:#8f9e88}
@@ -1516,7 +1522,7 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
     <ul class="nav-links" id="navLinks">
       <li class="has-dd"><button type="button" class="dd-btn" id="ddBtn" aria-expanded="false"><span data-i="nav_services">الخدمات</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="mega" id="mega"></div></li>
       <li><a href="#portfolio" data-i="nav_work">أعمالنا</a></li>
-      <li><a href="#process" data-i="nav_process">طريقة شغلنا</a></li>
+      <li><a href="#journey" data-i="nav_process">طريقة شغلنا</a></li>
       <li><a href="#contact" data-i="nav_contact">تواصل معنا</a></li>
     </ul>
     <div class="nav-cta">
@@ -1629,7 +1635,7 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
       <p data-i="work_p">شوف نماذج من شغلنا.</p>
     </div>
     <div class="reels" id="reels"></div>
-    <div class="reels-ctl"><div class="reels-dots" id="reelDots" aria-hidden="true"></div><button class="reel-snd" id="reelSnd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path class="x" d="M23 9l-6 6M17 9l6 6"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7"/></svg><span data-i="snd_on">شغّل الصوت</span></button></div>
+    <div class="reels-ctl"><div class="reels-dots" id="reelDots" aria-hidden="true"></div><button class="reel-snd" id="reelPause" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g class="pp-p"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></g><path class="pp-r" d="M8 5v14l11-7z" style="display:none"/></svg><span>وقّف الفيديوهات</span></button><button class="reel-snd" id="reelSnd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path class="x" d="M23 9l-6 6M17 9l6 6"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7"/></svg><span data-i="snd_on">شغّل الصوت</span></button></div>
     <div style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-forest" href="#portfolio"><span data-i="all_work">شوف كل الأعمال</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
@@ -1677,7 +1683,7 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
     <div class="wrap"><div class="j-bar"><i id="jBar"></i></div></div>
   </div>
 </section>
-<section class="process" id="process">
+<section class="process" id="process" hidden>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" data-i="pr_eye">طريقة شغلنا</span>
@@ -1760,15 +1766,15 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
     </div>
     <form id="leadForm" novalidate>
       <div class="f2">
-        <label for="fName"><span data-i="f_name">الاسم</span><input id="fName" name="name" autocomplete="name" required></label>
-        <label for="fPhone"><span data-i="f_phone">رقم الموبايل</span><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required></label>
+        <label for="fName"><span data-i="f_name">الاسم</span><input id="fName" name="name" autocomplete="name" required aria-describedby="fErr"></label>
+        <label for="fPhone"><span data-i="f_phone">رقم الموبايل</span><input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required aria-describedby="fErr" placeholder="01xxxxxxxxx"></label>
       </div>
       <label for="fBrand"><span data-i="f_brand">اسم البراند / النشاط</span><input id="fBrand" name="brand"></label>
-      <div style="display:grid;gap:8px"><span style="font-size:.85rem;font-weight:500" data-i="f_svc">محتاج إيه؟</span><div class="chips-pick" id="svcPick"></div></div>
+      <div style="display:grid;gap:8px" role="group" aria-labelledby="svcLbl"><span id="svcLbl" style="font-size:.85rem;font-weight:500" data-i="f_svc">محتاج إيه؟</span><div class="chips-pick" id="svcPick"></div></div>
       <div class="bk" id="bkBox" hidden>
         <div class="bk-h"><b data-i="bk_h">اختار ميعاد المكالمة التعريفية 📅</b><small data-i="bk_len">أونلاين · 30 دقيقة · ببلاش</small></div>
-        <div class="chips-pick bk-days" id="bkDays" role="radiogroup"></div>
-        <div class="chips-pick bk-times" id="bkTimes" role="radiogroup"></div>
+        <div class="chips-pick bk-days" id="bkDays" role="radiogroup" aria-label="اليوم"></div>
+        <div class="chips-pick bk-times" id="bkTimes" role="radiogroup" aria-label="الساعة"></div>
         <small class="bk-note" id="bkNote"></small>
       </div>
       <input type="text" name="website" id="fWeb" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none">
@@ -1794,7 +1800,7 @@ a.ig:hover{transform:translateY(-4px);box-shadow:0 36px 80px rgba(19,48,26,.22)}
   </div>
 </div>
 <div id="curtain" aria-hidden="true"><img src="logo-mark.png" alt=""></div>
-<div class="lb" id="lb" hidden><div class="lb-in"><button class="lb-x" id="lbX" type="button" aria-label="Close">✕</button><div class="lb-vid"><video id="lbV" controls playsinline></video></div><div class="lb-info" id="lbInfo"></div></div></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="فيديو"><div class="lb-in"><button class="lb-x" id="lbX" type="button" aria-label="Close">✕</button><div class="lb-vid"><video id="lbV" controls playsinline></video></div><div class="lb-info" id="lbInfo"></div></div></div>
 
 <footer>
   <div class="wrap">
@@ -1931,25 +1937,25 @@ const icons={
 };
 const T={
 ar:{nav_services:"الخدمات",nav_work:"أعمالنا",nav_process:"طريقة شغلنا",nav_packages:"الباقات",nav_contact:"تواصل معنا",nav_cta:"احجز مكالمة",
-hero_h1:"الانطباع الأول بيدوم… <em>خلّينا نخلّي انطباعك مايتنسيش.</em>",hero_lead:"وكالة تسويق ودعاية وإعلان في القاهرة. بنبني هوية براندك، ونوصّلها للناس الصح، ونحوّلها لتواصل حقيقي مع عملائك.",hero_cta1:"احجز مكالمة",hero_cta2:"شوف شغلنا",hero_trust:"From Brand Identity to Customer Connection.",
+hero_h1:"الانطباع الأول بيدوم… <em>خلّينا نخلّي انطباعك مايتنسيش.</em>",hero_lead:"وكالة تسويق ودعاية وإعلان في القاهرة. بنبني هوية براندك، ونوصّلها للناس الصح، ونحوّلها لتواصل حقيقي مع عملائك.",hero_cta1:"احجز مكالمة مجانية",hero_cta2:"شوف شغلنا",hero_trust:"From Brand Identity to Customer Connection.",
 clients_t:"براندات اشتغلنا معاها",svc_eye:"خدماتنا",svc_h:"كل اللي براندك محتاجه، تحت سقف واحد",svc_p:"من أول الفكرة والهوية، لحد الإعلان اللي بيجيب العميل. فريق واحد ماسك الصورة كاملة.",
 st1:"مشروع تم تنفيذه",st2:"براند بنشتغل معاه",st3:"قطعة محتوى شهريًا",st4:"سنين خبرة",ph_stats:"مكان مؤقت: هيتحط هنا أرقامكم الحقيقية",
 work_eye:"أعمالنا",work_h:"شغل بيتكلم عن نفسه",work_p:"شوف نماذج من شغلنا.",pr_eye:"طريقة شغلنا",pr_h:"4 خطوات من الفكرة للنتيجة",
 why_eye:"ليه رفيق؟",why_q:"براندك مش محتاج وكالة وبس… <em>محتاج رفيق.</em>",why_p:"اسمنا هو وعدنا: بنمشي معاك خطوة بخطوة، بنفهم السوق بتاعك، ونتعامل مع براندك كأنه بتاعنا.",
 t_eye:"آراء عملائنا",t_h:"الكلام ده مش مننا",ph_testi:"مكان مؤقت: آراء عملاء حقيقية",pk_eye:"الباقات",pk_h:"اختار البداية اللي تناسبك",pk_p:"كل باقة بتتفصّل على مقاس براندك.",
-faq_eye:"أسئلة شائعة",faq_h:"قبل ما تسأل",c_eye:"تواصل معنا",c_h:"يلا نبدأ؟",c_p:"احكيلنا عن براندك، وهنرد عليك على واتساب في أقرب وقت.",c_phone:"تليفون / واتساب",c_mail:"الإيميل",c_addr_l:"العنوان",c_addr:"مدينة نصر، القاهرة",copy:"نسخ",copied:"اتنسخ",
-f_name:"الاسم",f_phone:"رقم الموبايل",f_brand:"اسم البراند / النشاط",f_svc:"محتاج إيه؟",f_budget:"الميزانية الشهرية التقريبية",b0:"اختار",b1:"أقل من 10,000 ج.م",b2:"10,000 – 25,000 ج.م",b3:"25,000 – 50,000 ج.م",b4:"أكتر من 50,000 ج.م",f_msg:"احكيلنا عن مشروعك",f_send:"جهّز الرسالة على واتساب",f_ready:"رسالتك جاهزة. افتح واتساب وابعتها:",f_open:"افتح واتساب",bk_h:"اختار ميعاد المكالمة التعريفية 📅",bk_len:"أونلاين · 30 دقيقة · ببلاش",bk_online:"مكالمة تعريفية أونلاين",bk_office:"في مكتبنا بمدينة نصر",bk_pick_day:"اختار اليوم الأول 👆",bk_none:"المواعيد الأيام الجاية اتحجزت كلها 🙈 ابعتلنا على واتساب ونظبط ميعاد يناسبك.",bk_err_slot:"اختار يوم وساعة للمكالمة 😊",bk_taken:"الميعاد ده لسه حد حاجزه حالًا 🙈 اختار ميعاد تاني.",bk_sending:"بنحجزلك…",bk_done:"تم الحجز! 🎉",bk_when:"ميعاد مكالمتك",bk_ref:"رقم الحجز",bk_next:"فاضل خطوة صغيرة: افتح واتساب وابعت الرسالة عشان نأكدلك الميعاد 💚",bk_fail:"حصلت مشكلة صغيرة في الحجز، بس ولا يهمك: ابعتلنا على واتساب وهنظبط الميعاد معاك.",f_send_bk:"احجز المكالمة التعريفية",msg_book:"حجزت مكالمة تعريفية أونلاين من الموقع",msg_when:"الميعاد",msg_type:"نوع الميتنج",msg_ref:"رقم الحجز",am:"ص",pm:"م",
+faq_eye:"أسئلة شائعة",faq_h:"قبل ما تسأل",c_eye:"تواصل معنا",c_h:"يلا نبدأ؟",c_p:"احجز مكالمتك التعريفية المجانية (30 دقيقة أونلاين)، وهنأكدلك الميعاد على واتساب.",c_phone:"تليفون / واتساب",c_mail:"الإيميل",c_addr_l:"العنوان",c_addr:"مدينة نصر، القاهرة",copy:"نسخ",copied:"اتنسخ",
+f_name:"الاسم",err_name:"اكتب اسمك عشان نعرف نناديك 😊",err_phone:"رقم الموبايل شكله ناقص. اكتبه كامل عشان نقدر نكلمك.",msg_ph:"مثلًا: كافيه جديد في مدينة نصر ومحتاجين هوية وسوشيال ميديا",f_phone:"رقم الموبايل",f_brand:"اسم البراند / النشاط (اختياري)",f_svc:"محتاج إيه؟",f_budget:"الميزانية الشهرية التقريبية",b0:"اختار",b1:"أقل من 10,000 ج.م",b2:"10,000 – 25,000 ج.م",b3:"25,000 – 50,000 ج.م",b4:"أكتر من 50,000 ج.م",f_msg:"احكيلنا عن مشروعك (اختياري)",f_send:"جهّز الرسالة على واتساب",f_ready:"رسالتك جاهزة. افتح واتساب وابعتها:",f_open:"افتح واتساب",bk_h:"اختار ميعاد المكالمة التعريفية 📅",bk_len:"أونلاين · 30 دقيقة · ببلاش",bk_online:"مكالمة تعريفية أونلاين",bk_office:"في مكتبنا بمدينة نصر",bk_pick_day:"اختار اليوم الأول 👆",bk_none:"المواعيد الأيام الجاية اتحجزت كلها 🙈 ابعتلنا على واتساب ونظبط ميعاد يناسبك.",bk_err_slot:"اختار يوم وساعة للمكالمة 😊",bk_taken:"الميعاد ده لسه حد حاجزه حالًا 🙈 اختار ميعاد تاني.",bk_sending:"بنحجزلك…",bk_done:"تم الحجز! 🎉",bk_when:"ميعاد مكالمتك",bk_ref:"رقم الحجز",bk_next:"فاضل خطوة صغيرة: افتح واتساب وابعت الرسالة عشان نأكدلك الميعاد 💚",bk_fail:"حصلت مشكلة صغيرة في الحجز، بس ولا يهمك: ابعتلنا على واتساب وهنظبط الميعاد معاك.",f_send_bk:"احجز المكالمة التعريفية",msg_book:"حجزت مكالمة تعريفية أونلاين من الموقع",msg_when:"الميعاد",msg_type:"نوع الميتنج",msg_ref:"رقم الحجز",am:"ص",pm:"م",
 err:"اكتب اسمك ورقم موبايلك عشان نقدر نكلمك.",ft_p:"وكالة تسويق ودعاية وإعلان. From Brand Identity to Customer Connection.",ft_made:"مدينة نصر، القاهرة",
 msg_hi:"أهلاً رفيق 👋",msg_name:"الاسم",msg_phone:"الموبايل",msg_brand:"البراند",msg_svc:"الخدمات",msg_budget:"الميزانية",msg_brief:"تفاصيل",all:"الكل",ask:"اطلب عرض سعر",popular:"الأكثر طلبًا",onreq:"حسب الطلب",permo:"/ شهريًا",case_eye:"مشروع مميز",case_h:"",case_p:"من الدقيق للقطعة الأخيرة في 17 ثانية. صورنا كل خطوة بإضاءة سينمائية، ورتبنا اللقطات على إيقاع يخلّي المشاهد يجوع قبل ما الفيديو يخلص.",snd_on:"شغّل الصوت",sx_ph:"ابحث في الموقع… خدمة، مشروع، سؤال",sx_res:"نتيجة",sx_none:"مفيش نتايج لـ",sx_try:"جرّب تدوّر على:",sx_g_svc:"الخدمات",sx_g_proj:"المشاريع",sx_g_faq:"أسئلة",sx_g_site:"في الموقع",sx_nav:"تنقّل",sx_open:"افتح",sx_close:"اقفل",pj_client:"",pj_svcs:"الخدمات",pj_year:"السنة",pj_brief:"المطلوب",pj_appr:"اللي عملناه",pj_del:"اللي اتسلّم",pj_gal:"لقطات من المشروع",pj_prev:"المشروع اللي قبله",pj_next:"المشروع اللي بعده",pj_back:"كل الأعمال",nav_portfolio:"أعمالنا",pg_home:"الرئيسية",pg_svcs:"الخدمات",pg_what:"بنقدم إيه؟",pg_dl:"اللي هتستلمه",pg_how:"إزاي بنشتغل",pg_faq:"أسئلة عن الخدمة",pg_rel:"خدمات ممكن تحتاجها كمان",pg_more:"اعرف أكتر",pg_work:"من شغلنا",pg_cta_h:"يلا نبدأ <em>براندك</em>؟",pg_cta_p:"احكيلنا عن مشروعك، وهنرد عليك بخطة واضحة.",wa_us:"كلمنا واتساب",pf_eye:"أعمالنا",pf_h:"شغل بيتكلم<br><em>عن نفسه</em>",pf_p:"ريلز وتصوير ومحتوى عملناه لبراندات بتهتم بالتفاصيل. وده لسه البداية.",pf_all:"الكل",pf_soon:"مشروعك الجاي ممكن يبقى هنا",pf_cta:"عايز براندك يبقى هنا؟",pf_open:"شوف المشروع ←",all_work:"شوف كل الأعمال",seo_eye:"الظهور على جوجل",seo_h:"خلّي عميلك يلاقيك <em>أول ما يدوّر</em>",seo_lead:"الناس بتدوّر على جوجل قبل ما تختار. لو مش أول حاجة بيشوفوها، العميل بيروح للي قبلك.",seo_p1:"بنظبطلك ملف نشاطك على جوجل وخرائط جوجل، ونحسّن موقعك عشان يظهر في البحث المحلي لما حد قريب منك يدوّر على خدمتك.",seo_p2:"سواء عندك محل أو بتشتغل أونلاين، الظهور الصح في البحث بيجيبلك عملاء جاهزين يشتروا، من غير ما تدفع على كل ضغطة.",seo_cta:"اطلب فحص مجاني لظهورك",seo_rev_n:"عميل سعيد",seo_rev_c:"مراجعة جديدة",seo_rev_t:"«لقيتهم أول نتيجة على جوجل، والتعامل كان ممتاز.»",seo_gbp:"ملف النشاط على جوجل",seo_rate:"التقييم",seo_views:"مشاهدة",seo_revs:"مراجعة",drag3d:"اسحب للّف",fd2_eye:"تابعنا على انستجرام",ig_open:"شوف صفحتنا على انستجرام",ig_follow:"متابعة",fd2_h:"جريد متناسق… يخلّي الزائر يعمل Follow من أول نظرة",fd2_p:"ألوان ثابتة، وريلز شهية، وتصميمات بنفس الروح. ده اللي بيفرق بين صفحة عادية وبراند.",ig_posts:"بوست",ig_fol:"متابع",ig_fing:"متابَع",qz_eye:"افحص براندك في دقيقة",qz_h:"براندك جاهز يسيب انطباع؟",qz_p:"جاوب على 7 أسئلة سريعة، وهنقولك براندك واقف فين وتبدأ منين.",mb_t:"جاهز نبدأ؟",mani_eye:"إحنا مين",j_eye:"رحلتك مع رفيق",j_h:"من أول مكالمة… لأول تقرير",ba_eye:"الفرق اللي بنعمله",ba_h:"نفس العرض… انطباع مختلف تمامًا",ba_p:"اسحب الخط وشوف إزاي التصميم الصح بيغيّر انطباع الناس عن نفس المنتج.",ba_note:"مثال توضيحي",ba_before:"قبل",ba_after:"مع رفيق",fin_h:"جاهز تسيب <em>انطباع</em> مايتنسيش؟",fin_p:"مكالمة 30 دقيقة كفاية نفهم براندك ونقولك نبدأ منين.",rot_a:"إحنا بنخلّي عميلك",rot_sub:"من أول فكرة… لحد أول عميل.",fd_eye:"اهتمام مختلف",fd_h:"براندك مش رقم في قايمة… براندك أولوية.",fd_p:"بنختار البراندات اللي بنشتغل معاها بعناية، عشان كل براند ياخد تركيز فريق كامل واهتمام حقيقي بأدق التفاصيل.",fd_cta:"احجز مكالمتك التعريفية",snd_off:"اقفل الصوت"},
 en:{nav_services:"Services",nav_work:"Work",nav_process:"Process",nav_packages:"Packages",nav_contact:"Contact",nav_cta:"Book a call",
-hero_h1:"First impressions last. <em>Let's make yours unforgettable.</em>",hero_lead:"A marketing and advertising agency in Cairo. We build your brand's identity, put it in front of the right people, and turn it into real customer connection.",hero_cta1:"Book a call",hero_cta2:"See our work",hero_trust:"From Brand Identity to Customer Connection.",
+hero_h1:"First impressions last. <em>Let's make yours unforgettable.</em>",hero_lead:"A marketing and advertising agency in Cairo. We build your brand's identity, put it in front of the right people, and turn it into real customer connection.",hero_cta1:"Book a free call",hero_cta2:"See our work",hero_trust:"From Brand Identity to Customer Connection.",
 clients_t:"Brands we've worked with",svc_eye:"What we do",svc_h:"Everything your brand needs, under one roof",svc_p:"From the first idea and identity to the ad that brings the customer in. One team holding the whole picture.",
 st1:"Projects delivered",st2:"Brands we work with",st3:"Content pieces a month",st4:"Years of experience",ph_stats:"Placeholder: your real numbers go here",
 work_eye:"Our work",work_h:"Work that speaks for itself",work_p:"See samples of our work.",pr_eye:"How we work",pr_h:"Four steps from idea to results",
 why_eye:"Why RAFIQ?",why_q:"Your brand doesn't just need an agency. <em>It needs a RAFIQ.</em>",why_p:"Rafiq means companion. We walk with you step by step, learn your market, and treat your brand like our own.",
 t_eye:"Client stories",t_h:"Don't take our word for it",ph_testi:"Placeholder: real client testimonials",pk_eye:"Packages",pk_h:"Pick the starting point that fits",pk_p:"Every package is tailored to your brand.",
-faq_eye:"FAQ",faq_h:"Before you ask",c_eye:"Contact",c_h:"Ready to start?",c_p:"Tell us about your brand and we'll get back to you on WhatsApp shortly.",c_phone:"Phone / WhatsApp",c_mail:"Email",c_addr_l:"Address",c_addr:"Nasr City, Cairo",copy:"Copy",copied:"Copied",
-f_name:"Name",f_phone:"Mobile number",f_brand:"Brand / business name",f_svc:"What do you need?",f_budget:"Approximate monthly budget",b0:"Select",b1:"Under EGP 10,000",b2:"EGP 10,000 – 25,000",b3:"EGP 25,000 – 50,000",b4:"Over EGP 50,000",f_msg:"Tell us about your project",f_send:"Prepare WhatsApp message",f_ready:"Your message is ready. Open WhatsApp to send it:",f_open:"Open WhatsApp",bk_h:"Pick a time for your intro call 📅",bk_len:"Online · 30 minutes · free",bk_online:"Online intro call",bk_office:"At our office, Nasr City",bk_pick_day:"Pick a day first 👆",bk_none:"The next few days are fully booked 🙈 Message us on WhatsApp and we'll find a time that works.",bk_err_slot:"Pick a day and time for the call 😊",bk_taken:"Someone just grabbed that time 🙈 Please pick another.",bk_sending:"Booking…",bk_done:"You're booked! 🎉",bk_when:"Your call",bk_ref:"Booking ref",bk_next:"One small step left: open WhatsApp and send the message so we can confirm 💚",bk_fail:"Something went wrong with the booking, no worries: message us on WhatsApp and we'll set it up with you.",f_send_bk:"Book the intro call",msg_book:"I booked an online intro call from the website",msg_when:"Time",msg_type:"Meeting type",msg_ref:"Booking ref",am:"AM",pm:"PM",
+faq_eye:"FAQ",faq_h:"Before you ask",c_eye:"Contact",c_h:"Ready to start?",c_p:"Book your free 30-minute online intro call and we'll confirm it on WhatsApp.",c_phone:"Phone / WhatsApp",c_mail:"Email",c_addr_l:"Address",c_addr:"Nasr City, Cairo",copy:"Copy",copied:"Copied",
+f_name:"Name",err_name:"Add your name so we know who we're talking to 😊",err_phone:"That mobile number looks incomplete. Please enter the full number so we can call you.",msg_ph:"e.g. A new café in Nasr City that needs a brand identity and social media",f_phone:"Mobile number",f_brand:"Brand / business name (optional)",f_svc:"What do you need?",f_budget:"Approximate monthly budget",b0:"Select",b1:"Under EGP 10,000",b2:"EGP 10,000 – 25,000",b3:"EGP 25,000 – 50,000",b4:"Over EGP 50,000",f_msg:"Tell us about your project (optional)",f_send:"Prepare WhatsApp message",f_ready:"Your message is ready. Open WhatsApp to send it:",f_open:"Open WhatsApp",bk_h:"Pick a time for your intro call 📅",bk_len:"Online · 30 minutes · free",bk_online:"Online intro call",bk_office:"At our office, Nasr City",bk_pick_day:"Pick a day first 👆",bk_none:"The next few days are fully booked 🙈 Message us on WhatsApp and we'll find a time that works.",bk_err_slot:"Pick a day and time for the call 😊",bk_taken:"Someone just grabbed that time 🙈 Please pick another.",bk_sending:"Booking…",bk_done:"You're booked! 🎉",bk_when:"Your call",bk_ref:"Booking ref",bk_next:"One small step left: open WhatsApp and send the message so we can confirm 💚",bk_fail:"Something went wrong with the booking, no worries: message us on WhatsApp and we'll set it up with you.",f_send_bk:"Book the intro call",msg_book:"I booked an online intro call from the website",msg_when:"Time",msg_type:"Meeting type",msg_ref:"Booking ref",am:"AM",pm:"PM",
 err:"Add your name and mobile number so we can reach you.",ft_p:"Marketing & advertising agency. From Brand Identity to Customer Connection.",ft_made:"Nasr City, Cairo",
 msg_hi:"Hi RAFIQ 👋",msg_name:"Name",msg_phone:"Mobile",msg_brand:"Brand",msg_svc:"Services",msg_budget:"Budget",msg_brief:"Details",all:"All",ask:"Request a quote",popular:"Most popular",onreq:"On request",permo:"/ month",case_eye:"Featured project",case_h:"",case_p:"From flour to the final slice in 17 seconds. We shot every step with cinematic light and cut it to a rhythm that makes viewers hungry before the reel ends.",snd_on:"Sound on",sx_ph:"Search the site… a service, project or question",sx_res:"results",sx_none:"No results for",sx_try:"Try searching for:",sx_g_svc:"Services",sx_g_proj:"Projects",sx_g_faq:"Questions",sx_g_site:"On the site",sx_nav:"navigate",sx_open:"open",sx_close:"close",pj_client:"",pj_svcs:"Services",pj_year:"Year",pj_brief:"The brief",pj_appr:"What we did",pj_del:"Delivered",pj_gal:"Stills from the project",pj_prev:"Previous project",pj_next:"Next project",pj_back:"All work",nav_portfolio:"Work",pg_home:"Home",pg_svcs:"Services",pg_what:"What is it?",pg_dl:"What you get",pg_how:"How we work",pg_faq:"Questions about this service",pg_rel:"Services you might also need",pg_more:"Learn more",pg_work:"From our work",pg_cta_h:"Ready to grow <em>your brand</em>?",pg_cta_p:"Tell us about your project and we'll get back with a clear plan.",wa_us:"Chat on WhatsApp",pf_eye:"Our work",pf_h:"Work that speaks<br><em>for itself</em>",pf_p:"Reels, shoots and content we made for brands that care about detail. And this is just the start.",pf_all:"All work",pf_soon:"Your next project could be here",pf_cta:"Want your brand here?",pf_open:"View project →",all_work:"See all work",seo_eye:"Get found on Google",seo_h:"Be the first thing customers see <em>when they search</em>",seo_lead:"People search on Google before they choose. If you are not what they see first, they go to whoever is.",seo_p1:"We set up and optimise your Google Business Profile and Maps listing, and improve your website so it shows up in local search when someone nearby looks for what you offer.",seo_p2:"Whether you have a storefront or work online, ranking well brings you customers who are ready to buy, without paying for every click.",seo_cta:"Get a free visibility check",seo_rev_n:"Happy customer",seo_rev_c:"New review",seo_rev_t:"\"Found them as the first result on Google. Great experience.\"",seo_gbp:"Google Business Profile",seo_rate:"Rating",seo_views:"Views",seo_revs:"Reviews",drag3d:"Drag to spin",fd2_eye:"Follow us on Instagram",ig_open:"See our Instagram",ig_follow:"Follow",fd2_h:"A cohesive grid that earns the follow at first glance",fd2_p:"Consistent colors, mouth-watering reels and designs with one spirit. That is the difference between a page and a brand.",ig_posts:"posts",ig_fol:"followers",ig_fing:"following",qz_eye:"Check your brand in a minute",qz_h:"Is your brand ready to make an impression?",qz_p:"Answer 7 quick questions and we'll tell you where your brand stands and where to start.",mb_t:"Ready to start?",mani_eye:"Who we are",j_eye:"Your journey with RAFIQ",j_h:"From the first call to the first report",ba_eye:"The difference we make",ba_h:"Same offer. A completely different impression.",ba_p:"Drag the line and see how the right design changes the way people see your brand.",ba_note:"Illustrative example",ba_before:"Before",ba_after:"With RAFIQ",fin_h:"Ready to leave an <em>impression</em> that lasts?",fin_p:"A 30-minute call is enough for us to understand your brand and show you where to start.",rot_a:"We make your customers",rot_sub:"From the first idea to the first customer.",fd_eye:"A different kind of attention",fd_h:"Your brand isn't a number on a list. It's a priority.",fd_p:"We choose the brands we work with carefully, so each one gets a full team's focus and real attention to every detail.",fd_cta:"Book your intro call",snd_off:"Sound off"}
 };
@@ -2049,7 +2055,7 @@ if(BOOKING_API){const c=$("#contact");if("IntersectionObserver"in window&&c){con
 
 $("#leadForm").addEventListener("submit",async e=>{e.preventDefault();
  const n=$("#fName").value.trim(),p=$("#fPhone").value.trim();
- if(!n||p.replace(/\D/g,"").length<8){$("#fErr").textContent=t("err");$("#fOut").classList.remove("show");return}
+ const badN=!n, badP=p.replace(/\D/g,"").length<8;$("#fName").setAttribute("aria-invalid",String(badN));$("#fPhone").setAttribute("aria-invalid",String(!badN&&badP));if(badN||badP){$("#fErr").textContent=t(badN?"err_name":"err_phone");$("#fOut").classList.remove("show");(badN?$("#fName"):$("#fPhone")).focus();return}
  const booking=BK.on()&&BK.days&&BK.days.length>0;
  if(booking&&(!BK.day||!BK.time)){$("#fErr").textContent=t("bk_err_slot");$("#fOut").classList.remove("show");$("#bkBox").scrollIntoView({block:"center",behavior:"smooth"});return}
  $("#fErr").textContent="";
@@ -2147,9 +2153,9 @@ if(!RM && matchMedia("(hover:hover) and (pointer:fine)").matches){
 // (featured project removed)
 
 // ===== work reels: one plays, then the next =====
-const RL=(function(){const box=$("#reels"); if(!box) return null; let act=0, muted=true, seen=false;
+const RL=(function(){const box=$("#reels"); if(!box) return null; let act=0, muted=true, seen=false, paused=matchMedia("(prefers-reduced-motion: reduce)").matches;
  const mob=()=>matchMedia("(max-width:760px)").matches;
- box.innerHTML=D.reels.map((r,i)=>`<figure class="rl" data-i="${i}"><video src="${r.src}" poster="${r.poster}" muted playsinline preload="${i?"metadata":"auto"}"></video><div class="rl-bar"><i></i></div><figcaption><b></b><small></small></figcaption></figure>`).join("");
+ box.innerHTML=D.reels.map((r,i)=>`<figure class="rl" data-i="${i}" tabindex="0" role="button"><video src="${r.src}" poster="${r.poster}" muted playsinline preload="${i?"metadata":"auto"}"></video><div class="rl-bar"><i></i></div><figcaption><b></b><small></small></figcaption></figure>`).join("");
  $("#reelDots").innerHTML=D.reels.map(()=>"<i></i>").join("");
  const cards=[...box.children], vids=cards.map(c=>c.querySelector("video"));
  function caps(){cards.forEach((c,i)=>{const r=D.reels[i];c.querySelector("b").textContent=lang==="ar"?r.ar:r.en;c.querySelector("small").textContent=lang==="ar"?r.sa:r.se})}
@@ -2157,17 +2163,19 @@ const RL=(function(){const box=$("#reels"); if(!box) return null; let act=0, mut
  function play(i,scroll){act=(i+vids.length)%vids.length; vids.forEach((v,k)=>{if(k!==act){v.pause()}}); const v=vids[act]; v.muted=muted; v.currentTime=0;
   const pr=v.play(); if(pr)pr.catch(()=>{v.muted=true;muted=true;syncSnd();v.play().catch(()=>{})}); paint();
   if(scroll&&mob()){const c=cards[act]; box.scrollTo({left:c.offsetLeft-(box.clientWidth-c.clientWidth)/2,behavior:RM?"auto":"smooth"})}}
- vids.forEach((v,i)=>{v.addEventListener("ended",()=>{if(i===act&&seen)play(act+1,true)});
+ vids.forEach((v,i)=>{v.addEventListener("ended",()=>{if(i===act&&seen&&!paused)play(act+1,true)});
   v.addEventListener("timeupdate",()=>{if(v.duration)cards[i].querySelector(".rl-bar i").style.width=(v.currentTime/v.duration*100)+"%"})});
- cards.forEach((c,i)=>c.addEventListener("click",()=>{if(i!==act)play(i,true)}));
+ const go=i=>{if(paused){paused=false;syncP()} if(i!==act||vids[i].paused)play(i,true)};cards.forEach((c,i)=>{c.addEventListener("click",()=>go(i));c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go(i)}})});
  if("IntersectionObserver" in window){
-  new IntersectionObserver(es=>es.forEach(e=>{seen=e.isIntersecting; if(seen)play(act); else vids.forEach(v=>v.pause())}),{threshold:.35}).observe(box);
-  const cio=new IntersectionObserver(es=>{if(!mob()||!seen)return; es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i; if(i!==act)play(i,false)}})},{root:box,threshold:.7});
+  new IntersectionObserver(es=>es.forEach(e=>{seen=e.isIntersecting; if(seen&&!paused)play(act); else vids.forEach(v=>v.pause())}),{threshold:.35}).observe(box);
+  const cio=new IntersectionObserver(es=>{if(!mob()||!seen)return; es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i; if(i!==act&&!paused)play(i,false)}})},{root:box,threshold:.7});
   cards.forEach(c=>cio.observe(c));
  } else {seen=true;play(0)}
+ function syncP(){const b=$("#reelPause");if(!b)return;const ar=lang==="ar";b.setAttribute("aria-pressed",String(paused));b.querySelector("span").textContent=paused?(ar?"شغّل الفيديوهات":"Play videos"):(ar?"وقّف الفيديوهات":"Pause videos");b.querySelector(".pp-p").style.display=paused?"none":"";b.querySelector(".pp-r").style.display=paused?"":"none";cards.forEach((c,i)=>{const r=D.reels[i];c.setAttribute("aria-label",(ar?"شغّل: ":"Play: ")+(ar?r.ar:r.en))})}
  function syncSnd(){const b=$("#reelSnd"); b.setAttribute("aria-pressed",String(!muted)); b.classList.toggle("on",!muted); b.querySelector("span").textContent=t(muted?"snd_on":"snd_off")}
+ $("#reelPause").addEventListener("click",()=>{paused=!paused; if(paused)vids.forEach(v=>v.pause()); else if(seen)play(act); syncP()});
  $("#reelSnd").addEventListener("click",()=>{muted=!muted; vids[act].muted=muted; if(!muted)vids[act].play().catch(()=>{}); syncSnd()});
- caps(); paint(); syncSnd(); return {caps:()=>{caps();syncSnd()}}})();
+ caps(); paint(); syncSnd(); syncP(); return {caps:()=>{caps();syncSnd();syncP()}}})();
 window.RL=RL;
 
 // rotating words
@@ -2448,8 +2456,8 @@ function projPage(sl){const i=PROJ.findIndex(x=>x.slug===sl); if(i<0) return fal
 const lb=$("#lb"), lbV=$("#lbV");
 function openLB(i){const r=D.reels[i], ar=lang==="ar"; lbV.src=r.src; lbV.poster=r.poster;
  $("#lbInfo").innerHTML=`<span class="cat">${(reelCat[r.src]||[]).map(catName).join(" · ")}</span><h3>${ar?r.h[0]:r.h[1]}</h3><p>${ar?r.p[0]:r.p[1]}</p><div class="tg">${D.casetags.map(x=>`<span>${x}</span>`).join("")}</div><a class="btn btn-leaf" href="#contact" style="justify-self:start">${t("hero_cta1")}</a>`;
- lb.hidden=false; document.body.style.overflow="hidden"; lbV.play().catch(()=>{}); $("#lbX").focus()}
-function closeLB(){lb.hidden=true; lbV.pause(); lbV.removeAttribute("src"); lbV.load(); document.body.style.overflow=""}
+ window._lbRet=document.activeElement; lb.hidden=false; document.body.style.overflow="hidden"; lbV.play().catch(()=>{}); $("#lbX").focus()}
+function closeLB(){lb.hidden=true; lbV.pause(); lbV.removeAttribute("src"); lbV.load(); document.body.style.overflow=""; if(window._lbRet&&window._lbRet.focus)try{window._lbRet.focus()}catch(e){}}
 $("#lbX").onclick=closeLB; lb.addEventListener("click",e=>{if(e.target===lb||e.target.closest("#lbInfo a"))closeLB()});
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!lb.hidden)closeLB()});
 
@@ -2588,8 +2596,8 @@ function runSearch(){const raw=sxIn.value.trim(), q=norm(raw).n; IDX=IDX||buildI
   return `<div class="sx-g"><div class="sx-gh"><span>${names[g]}</span><span>${gl.length}</span></div>${gl.map(h=>`<a class="sx-it" href="${h.it.href}" data-n="${n}" style="--i:${n++}" role="option"><span class="ic">${icoOf(h.it.icon)}</span><span><b>${hl(h.it.title,h.it.nt,q)}</b><small>${snip(h.it.text,h.it.nx,q)}</small></span><span class="go">→</span></a>`).join("")}</div>`}).join("");
  sxItems=[...sxRes.querySelectorAll(".sx-it")];sxAct=0;sxMark()}
 function sxMark(){sxItems.forEach((a,i)=>a.classList.toggle("act",i===sxAct));const a=sxItems[sxAct];a&&a.scrollIntoView({block:"nearest"})}
-function openSx(){IDX=null;sxIn.placeholder=t("sx_ph");sx.hidden=false;document.body.style.overflow="hidden";runSearch();setTimeout(()=>sxIn.focus(),30)}
-function closeSx(){sx.hidden=true;document.body.style.overflow=""}
+let sxRet=null;function openSx(){sxRet=document.activeElement;IDX=null;sxIn.placeholder=t("sx_ph");sx.hidden=false;document.body.style.overflow="hidden";runSearch();setTimeout(()=>sxIn.focus(),30)}
+function closeSx(){sx.hidden=true;document.body.style.overflow="";if(sxRet&&sxRet.focus)try{sxRet.focus()}catch(e){}}
 function sxGo(href){closeSx();const target=href.slice(1);if(location.hash===href){routeNow()}else location.hash=target;
  setTimeout(()=>{const el=document.getElementById(target);if(el&&!el.closest("#page")){el.classList.add("flash-hit");setTimeout(()=>el.classList.remove("flash-hit"),2100)}},700)}
 $("#srchBtn").onclick=openSx; $("#sxX").onclick=closeSx;
@@ -2617,15 +2625,21 @@ const TESTI=[];
 (function(){
  const sec=document.getElementById("testimonials");if(!sec)return;
  const esc=x=>String(x||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
- function draw(){const L=(typeof lang!=="undefined"?lang:"ar")==="en"?"en":"ar";
+ function draw(){const L=document.documentElement.lang==="en"?"en":"ar";
   const sk=document.querySelector(".skip");if(sk)sk.textContent=L==="ar"?"تخطّي للمحتوى":"Skip to content";
+  const AL={ar:{"#toTop":"ارجع لفوق","a.wa":"كلمنا على واتساب","#menuBtn":"القايمة","#langBtn":"English","#sx":"بحث في الموقع","#sxIn":"اكتب كلمة البحث","#sxX":"اقفل البحث","#lbX":"اقفل الفيديو","#lb":"فيديو","#bkDays":"اليوم","#bkTimes":"الساعة","#baRange":"قبل وبعد"},
+            en:{"#toTop":"Back to top","a.wa":"Chat on WhatsApp","#menuBtn":"Menu","#langBtn":"العربية","#sx":"Site search","#sxIn":"Search","#sxX":"Close search","#lbX":"Close video","#lb":"Video","#bkDays":"Day","#bkTimes":"Time","#baRange":"Before / after"}}[L];
+  for(const k in AL)document.querySelectorAll(k).forEach(e=>e.setAttribute("aria-label",AL[k]));
+  document.querySelectorAll('button[aria-label="Search"],button[aria-label="بحث"]').forEach(e=>e.setAttribute("aria-label",L==="ar"?"بحث":"Search"));
+  const mp=document.getElementById("fMsg");if(mp)mp.placeholder=L==="ar"?"مثلًا: كافيه جديد في مدينة نصر ومحتاجين هوية وسوشيال ميديا":"e.g. A new café in Nasr City that needs a brand identity and social media";
+  document.querySelectorAll(".svc-more").forEach(a=>{const h=a.closest("article,li,div")&&a.closest("article,li,div").querySelector("h3");if(h)a.setAttribute("aria-label",(L==="ar"?"اعرف أكتر عن ":"Learn more about ")+h.textContent.trim())});
   if(!TESTI.length){sec.hidden=true;return}
   sec.hidden=false;
   document.getElementById("tEye").textContent=L==="ar"?"آراء عملائنا":"Client voices";
   document.getElementById("tH").textContent=L==="ar"?"الكلام ده مش مننا… ده من عملائنا":"Don't take our word for it";
   document.getElementById("tGrid").innerHTML=TESTI.map(x=>{const q=L==="ar"?x.q_ar:(x.q_en||x.q_ar),r=L==="ar"?x.role_ar:(x.role_en||x.role_ar),st=L==="ar"?x.stat_ar:(x.stat_en||x.stat_ar);
    return `<figure class="tq-card">${x.stat?`<div class="tq-stat" dir="ltr">${esc(x.stat)}<small>${esc(st)}</small></div>`:`<div class="tq-stars" aria-label="5/5">★★★★★</div>`}<blockquote>${esc(q)}</blockquote><figcaption class="tq-who"><span class="tq-av">${x.img?`<img src="${esc(x.img)}" alt="" loading="lazy">`:esc((x.name||"?").trim()[0])}</span><span><b>${esc(x.name)}</b><span>${esc(r)}</span></span></figcaption></figure>`}).join("")}
- if(typeof render==="function"){const _r=render;render=function(){_r.apply(this,arguments);draw()}}
+ const lb=document.getElementById("langBtn");if(lb)lb.addEventListener("click",()=>setTimeout(draw,80));
  draw();
 })();
 </script>
