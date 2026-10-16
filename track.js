@@ -33,7 +33,7 @@ window.RAFIQ_TRACK = { ga4: "", pixel: "" };
       window.gtag = function () { dataLayer.push(arguments); };
       gtag("js", new Date());
       gtag("consent", "default", { ad_storage: "granted", analytics_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
-      gtag("config", C.ga4, { page_path: location.pathname });
+      gtag("config", C.ga4, { page_path: pagePath(), page_title: pageTitle() });
     }
     if (C.pixel) {
       !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
@@ -42,7 +42,32 @@ window.RAFIQ_TRACK = { ga4: "", pixel: "" };
       fbq("init", C.pixel); fbq("track", "PageView");
     }
     queue.splice(0).forEach(function (q) { send(q[0], q[1]); });
+    // صفحات الخدمات والمشاريع جوه الموقع (#s-… و #p-…) بتتسجل كصفحات مستقلة
+    var last = pagePath();
+    window.addEventListener("hashchange", function () {
+      var p = pagePath(); if (p === last) return; last = p;
+      (function () {
+        try { if (window.gtag) gtag("event", "page_view", { page_path: p, page_location: location.origin + p, page_title: pageTitle() }); } catch (x) {}
+        try { if (window.fbq) fbq("track", "PageView"); } catch (x) {}
+      })();
+    });
   }
+  function pagePath() {
+    var h = (location.hash || "").slice(1);
+    if (/^(s-|p-)/.test(h) || h === "portfolio") return location.pathname.replace(/\/$/, "") + "/" + h;
+    return location.pathname;
+  }
+  var NAMES = { branding: "الهوية والبراندينج", social: "إدارة السوشيال ميديا", content: "صناعة المحتوى", video: "الفيديو والموشن",
+    ads: "الإعلانات الممولة", web: "المواقع وصفحات الهبوط", seo: "الظهور على جوجل (SEO)",
+    appetite: "ريل يفتح النفس", grill: "من الصاج للطبق", morning: "بنكهة الصبح", slow: "اللحظة على مهلها" };
+  function pageTitle() {
+    var h = (location.hash || "").slice(1);
+    if (h === "portfolio") return "أعمالنا | RAFIQ";
+    if (h.indexOf("s-") === 0) return "خدمة: " + (NAMES[h.slice(2)] || h.slice(2)) + " | RAFIQ";
+    if (h.indexOf("p-") === 0) return "مشروع: " + (NAMES[h.slice(2)] || h.slice(2)) + " | RAFIQ";
+    return location.pathname.indexOf("thanks") > -1 ? "تم الحجز | RAFIQ" : "الصفحة الرئيسية | RAFIQ";
+  }
+
 
   // كل ضغطة واتساب أو اتصال = "تواصل"
   document.addEventListener("click", function (ev) {
