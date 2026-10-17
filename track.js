@@ -79,16 +79,15 @@ window.RAFIQ_TRACK = { ga4: "G-0LJCR7NRFJ", pixel: "" };
   }, true);
 
   function banner() {
-    var ar = (document.documentElement.lang || "ar") !== "en";
     var css = document.createElement("style");
     css.textContent = ".rq-ck{position:fixed;inset-inline:16px;bottom:16px;z-index:9998;max-width:520px;margin-inline:auto;background:#13301a;color:#eef3e8;border:1px solid rgba(160,190,122,.35);border-radius:18px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;box-shadow:0 18px 40px rgba(0,0,0,.28);font:400 .9rem/1.7 'Readex Pro',system-ui,sans-serif}" +
       ".rq-ck p{margin:0;flex:1 1 240px}.rq-ck div{display:flex;gap:8px}.rq-ck button{font:600 .88rem 'Readex Pro',system-ui,sans-serif;border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;border:1px solid rgba(160,190,122,.5);background:transparent;color:#eef3e8}" +
       ".rq-ck button.y{background:#a0be7a;color:#13301a;border-color:#a0be7a}.rq-ck button:focus-visible{outline:3px solid #a0be7a;outline-offset:2px}";
     document.head.appendChild(css);
-    var d = document.createElement("div"); d.className = "rq-ck"; d.setAttribute("role", "dialog"); d.setAttribute("aria-label", ar ? "الكوكيز" : "Cookies");
-    d.dir = ar ? "rtl" : "ltr";
-    d.innerHTML = "<p>" + (ar ? "بنستخدم كوكيز عشان نفهم إزاي الزوار بيستخدموا الموقع ونحسّن إعلاناتنا. موافق؟" : "We use cookies to understand how visitors use the site and to improve our ads. OK?") + "</p>" +
-      "<div><button type='button' class='y'>" + (ar ? "موافق" : "Accept") + "</button><button type='button' class='n'>" + (ar ? "لا شكرًا" : "No thanks") + "</button></div>";
+    var d = document.createElement("div"); d.className = "rq-ck"; d.setAttribute("role", "dialog"); d.setAttribute("aria-label", "Cookies");
+    d.dir = "ltr"; d.lang = "en";
+    d.innerHTML = "<p>A few cookies help us make your visit better.</p>" +
+      "<div><button type='button' class='y'>Sounds good</button><button type='button' class='n'>Not now</button></div>";
     document.body.appendChild(d);
     d.querySelector(".y").onclick = function () { setC("yes"); d.remove(); load(); };
     d.querySelector(".n").onclick = function () { setC("no"); d.remove(); };
