@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="sub.css?v=1">
 <script src="track.js?v=3" defer></script>
 <style>
-/* layout: forest hero with a photo collage → perks → 3 steps → the form card → footer */
+/* layout: forest hero with an icon collage → perks → 3 steps → the form card → footer */
 .hero{background:radial-gradient(120% 90% at 85% 0%,#21502b 0%,var(--forest) 55%,#0b1f10 100%);color:#fff;padding-block:clamp(48px,8vw,96px);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);margin:14px 0 16px}
@@ -34,7 +34,13 @@
 .hero .acts{display:flex;flex-wrap:wrap;gap:12px}
 .collage{position:relative;height:420px}
 .collage figure{position:absolute;margin:0;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.4);border:4px solid rgba(255,255,255,.08)}
-.collage img{width:100%;height:100%;object-fit:cover}
+.collage figure.art{display:grid;place-items:center;background:linear-gradient(160deg,#1f4a29,#102914);border-color:rgba(160,190,122,.25)}
+.art svg{width:46%;height:auto;color:var(--leaf)}
+.art .lbl{position:absolute;bottom:12px;inset-inline:12px;text-align:center;font-weight:700;color:#e6efdc;font-size:.95rem}
+.art .rec{position:absolute;top:14px;inset-inline-start:14px;display:flex;gap:6px;align-items:center;font:700 .75rem var(--f-body);color:#fff;direction:ltr}
+.art .rec::before{content:"";width:9px;height:9px;border-radius:50%;background:#e0475b}
+.art .bar{position:absolute;bottom:44px;inset-inline:16px;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.art .bar i{display:block;width:62%;height:100%;background:var(--leaf)}
 .collage .c1{width:52%;height:78%;inset-inline-end:0;top:0;transform:rotate(3deg)}
 .collage .c2{width:46%;height:58%;inset-inline-start:2%;top:18%;transform:rotate(-5deg)}
 .collage .c3{width:40%;height:42%;inset-inline-end:28%;bottom:0;transform:rotate(-1deg)}
@@ -88,6 +94,7 @@ input.hp{position:absolute;width:1px!important;height:1px!important;min-height:0
 @media (max-width:900px){
   .hero .wrap,.join .wrap{grid-template-columns:1fr}
   .collage{height:300px;order:-1}
+  .art .lbl{font-size:.82rem}
   .perks{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
   .side{position:static}
@@ -96,6 +103,8 @@ input.hp{position:absolute;width:1px!important;height:1px!important;min-height:0
   .perks,.f2{grid-template-columns:1fr}
   .top nav .hide-s{display:none}
   .collage{height:250px}
+  .art .lbl{font-size:.72rem;bottom:8px}
+  .art .bar{bottom:30px}
 }
 </style>
 </head>
@@ -128,9 +137,9 @@ input.hp{position:absolute;width:1px!important;height:1px!important;min-height:0
       </div>
     </div>
     <div class="collage" aria-hidden="true">
-      <figure class="c1"><img src="reel-grill.jpg" alt=""></figure>
-      <figure class="c2"><img src="reel-appetite.jpg" alt=""></figure>
-      <figure class="c3"><img src="reel-morning.jpg" alt=""></figure>
+      <figure class="c1 art"><span class="rec">REC</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 9.5v5l4-2.5z" fill="currentColor"/></svg><span class="bar"><i></i></span><span class="lbl">ريلز و UGC</span></figure>
+      <figure class="c2 art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H8l1.5-2h5L16 6h2.5A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.6"/></svg><span class="lbl">تصوير فوتوغرافي</span></figure>
+      <figure class="c3 art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="M15.5 10.5 21 7.5v9l-5.5-3"/></svg><span class="lbl">فيديو</span></figure>
       <span class="tag t1">📸 من أبطال رفيق</span>
       <span class="tag t2">🤝 شريكك في النجاح</span>
     </div>
